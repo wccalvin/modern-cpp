@@ -1,5 +1,7 @@
 #include <iostream>
 
+// function prototype or forward declaration;
+// without this the compilation would fail
 int add(int, int);
 
 int main() {
