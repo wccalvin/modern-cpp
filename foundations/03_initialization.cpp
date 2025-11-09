@@ -24,5 +24,9 @@ int main() {
   int x{42};  // x is initialized to 42
   std::cout << x << std::endl;
 
+  // copy initialization
+  double y = 3.14;  // y is initialized to 3.14
+  std::cout << y << std::endl;
+
   return 0;
 }
