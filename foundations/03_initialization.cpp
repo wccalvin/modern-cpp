@@ -28,5 +28,17 @@ int main() {
   double y = 3.14;  // y is initialized to 3.14
   std::cout << y << std::endl;
 
+  /*
+   * it forces initialization
+   * prevents narrowing conversions
+   * uniform syntax for all types
+   */
+
+  // narrowing conversions example
+  double z{};
+  std::cout << z << std::endl;
+  z = 7;  // data integrity lost
+  std::cout << z << std::endl;
+
   return 0;
 }
