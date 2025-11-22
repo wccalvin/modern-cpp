@@ -34,5 +34,21 @@ int main() {
     std::cout << "Array element: " << num << std::endl;
   }
 
+  // range-based for loop explanation with begin() and end()
+  /*
+   * range-based for loop internally uses begin() and end() functions
+   * begin() returns an iterator to the first element
+   * end() returns an iterator to one past the last element
+   * loop iterates from begin() to end()
+   */
+  std::cout << "Using begin() and end() explicitly:" << std::endl;
+  for (auto it = std::begin(arr); it != std::end(arr); ++it) {
+    std::cout << "Array element pointer: " << it << std::endl;
+    *it /= 10;  // revert each element back by dividing by 10 and assigning it
+                // to pointer
+    std::cout << "Array element: " << *it
+              << std::endl;  // dereference pointer to get value
+  }
+
   return 0;
 }
