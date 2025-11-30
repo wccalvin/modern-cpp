@@ -21,8 +21,9 @@ int main() {
   std::cout << "Pointer valuePtr: " << valuePtr << std::endl;
   std::cout << "Value through pointer dereferencing: " << *valuePtr
             << std::endl;
+  std::cout << std::endl;
 
-  // try assingning differnt type address to pointer
+  // try assigning differnt type address to pointer
   double dvalue = 3.14;
   // ptr = &dvalue;  // compilation error: cannot convert from 'double*' -
   // use void* to solve this issue
@@ -32,11 +33,20 @@ int main() {
   *valuePtr = 100;
   std::cout << "Modified Value: " << value
             << std::endl;  // note the value of value has changed as well
+  std::cout << std::endl;
 
   // can't read or write through null pointer
   // std::cout << *ptr << std::endl; // runtime error: dereferencing null
   // pointer
   // *ptr = 10;  // runtime error: dereferencing null pointer
+
+  // null pointer initialization
+  // int* nullPtr = nullptr;  // preferred way
+  // std::cout << "nullPtr: " << *nullPtr << std::endl; // EXC_BAD_ACCESS error
+
+  // sematic error of uninitialized pointer with math operations
+  int* uninitPtr;  // uninitialized pointer (wild pointer)
+  std::cout << uninitPtr + 2 << std::endl;  // sematic error: undefined behavior
 
   return 0;
 }
