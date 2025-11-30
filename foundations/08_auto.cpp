@@ -18,6 +18,7 @@ int main() {
   std::cout << "doubleVar: " << doubleVar
             << ", type: " << typeid(doubleVar).name() << std::endl;
   std::cout << "sum: " << sum << ", type: " << typeid(sum).name() << std::endl;
+  std::cout << std::endl;
 
   // example of const with auto and caveat of const propagation
   const auto constVar = 100;  // const int
@@ -30,6 +31,7 @@ int main() {
   std::cout << "Modified newVar: " << newVar << std::endl;
   std::cout << "newVar: " << newVar << ", type: " << typeid(newVar).name()
             << std::endl;
+  std::cout << std::endl;
 
   // example of const with auto and proper const propagation
   const auto anotherConstVar = 300;            // const int
@@ -39,6 +41,7 @@ int main() {
   std::cout << "anotherNewVar: " << anotherNewVar
             << ", type: " << typeid(anotherNewVar).name() << std::endl;
   // anotherNewVar = 400;  // Compilation error: cannot modify a const variable
+  std::cout << std::endl;
 
   // example of auto with pointers
   int value = 50;
@@ -51,6 +54,16 @@ int main() {
             << ", type: " << typeid(inferredPtr).name() << std::endl;
   *inferredPtr = 60;  // modifying value through inferredPtr
   std::cout << "Modified value through inferredPtr: " << value << std::endl;
+  std::cout << std::endl;
+
+  // experiment to modify const pointer with auto
+  const int num = 5;
+  auto ptrNum = &num;  // pointer to int
+  std::cout << "num: " << num << ", type: " << typeid(num).name() << std::endl;
+  std::cout << "ptrNum: " << ptrNum << ", type: " << typeid(ptrNum).name()
+            << std::endl;
+  // *ptrNum = 10; // Compilation error: cannot modify a const value
+  std::cout << std::endl;
 
   // example of const pointer with auto - proper const propagation happens here
   const auto constPtr = ptr;  // int* const (const pointer to int)
