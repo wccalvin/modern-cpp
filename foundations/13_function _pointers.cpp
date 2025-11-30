@@ -28,14 +28,16 @@ int main() {
   // reassign the function pointer to greetEvening
   greetPtr = greetEvening;
   greetPtr();  // calls greetEvening
+  std::cout << std::endl;
 
   // using function pointer as a callback
   executeGreeting(greetMorning);  // calls greetMorning
   executeGreeting(greetEvening);  // calls greetEvening
+  std::cout << std::endl;
 
   // atexit example
   void (*byePtr)() = sayBye;
-  std::atexit(byePtr);  // register greetMorning to be called at exit
+  std::atexit(byePtr);  // register byePtr to be called at exit
   std::cout << "Program is running..." << std::endl;
   std::cout << "Program is ending..." << std::endl;
 
