@@ -49,4 +49,15 @@ int main() {
   delete[] copy;  // free allocated memory for copy
   copy = nullptr;
   std::cout << std::endl;
+
+  // initialize array using new[]
+  int* initArray = new int[3]{1, 2, 3};  // allocate and initialize array
+  std::cout << "Initialized array elements: ";
+  for (size_t i = 0; i < 3; ++i) {
+    std::cout << initArray[i] << " ";  // print elements
+  }
+  std::cout << std::endl;
+  delete[] initArray;  // free allocated memory
+  initArray = nullptr;
+  return 0;
 }
