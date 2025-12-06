@@ -32,9 +32,9 @@ int main() {
   std::cout << std::endl;
 
   // simple representation of 2D array using single allocation
-  int* p1 = new int[3];
-  int* p2 = new int[3];
-  int** twoDArray = new int*[2];
+  int *p1 = new int[3];
+  int *p2 = new int[3];
+  int **twoDArray = new int *[2];
   twoDArray[0] = p1;
   twoDArray[1] = p2;
   // assign values
@@ -57,12 +57,12 @@ int main() {
   delete[] p1;
   delete[] p2;
   delete[] twoDArray;
-  twoDArray = nullptr;  // set pointer to nullptr after deletion
+  twoDArray = nullptr; // set pointer to nullptr after deletion
 
   // representation of the same 2D array using dynamic memory allocation
-  int** heapArray = new int*[rows];  // allocate array of pointers for rows
+  int **heapArray = new int *[rows]; // allocate array of pointers for rows
   for (size_t i = 0; i < rows; ++i) {
-    heapArray[i] = new int[cols];  // allocate each row
+    heapArray[i] = new int[cols]; // allocate each row
   }
   // assign values to the dynamically allocated 2D array
   int value = 1;
@@ -82,15 +82,15 @@ int main() {
   std::cout << std::endl;
   // deallocate memory for the dynamically allocated 2D array
   for (size_t i = 0; i < rows; ++i) {
-    delete[] heapArray[i];  // free each row
+    delete[] heapArray[i]; // free each row
   }
-  delete[] heapArray;   // free array of pointers for rows
-  heapArray = nullptr;  // set pointer to nullptr after deletion
+  delete[] heapArray;  // free array of pointers for rows
+  heapArray = nullptr; // set pointer to nullptr after deletion
 
   // initialize 2D array using new on the heap
-  int** initArray = new int*[2];  // allocate array of pointers for rows
+  int **initArray = new int *[2]; // allocate array of pointers for rows
   for (size_t i = 0; i < 2; ++i) {
-    initArray[i] = new int[3];  // allocate each row
+    initArray[i] = new int[3]; // allocate each row
   }
   // initialize values
   initArray[0][0] = 10;
@@ -109,10 +109,10 @@ int main() {
   }
   // deallocate memory
   for (size_t i = 0; i < 2; ++i) {
-    delete[] initArray[i];  // free each row
+    delete[] initArray[i]; // free each row
   }
-  delete[] initArray;   // free array of pointers for rows
-  initArray = nullptr;  // set pointer to nullptr after deletion
+  delete[] initArray;  // free array of pointers for rows
+  initArray = nullptr; // set pointer to nullptr after deletion
 
   return 0;
 }
