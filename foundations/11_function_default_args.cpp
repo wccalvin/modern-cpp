@@ -9,8 +9,8 @@
 
 // cannot have non-default argument after a default argument
 // void exampleFunc(int a = 10, int b); // invalid
-void displayInfo(const std::string& name, int age = 18,
-                 const std::string& city = "Unknown") {
+void displayInfo(const std::string &name, int age = 18,
+                 const std::string &city = "Unknown") {
   std::cout << "Name: " << name << ", Age: " << age << ", City: " << city
             << std::endl;
 }

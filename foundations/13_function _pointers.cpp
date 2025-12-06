@@ -17,27 +17,27 @@ void greetMorning() { std::cout << "Good morning!" << std::endl; }
 void greetEvening() { std::cout << "Good evening!" << std::endl; }
 void sayBye() { std::cout << "Goodbye!" << std::endl; }
 void executeGreeting(void (*greetFunc)()) {
-  greetFunc();  // call the function through the pointer
+  greetFunc(); // call the function through the pointer
 }
 
 int main() {
   // declare a function pointer and assign it to greetMorning
   void (*greetPtr)() = greetMorning;
-  greetPtr();  // calls greetMorning
+  greetPtr(); // calls greetMorning
 
   // reassign the function pointer to greetEvening
   greetPtr = greetEvening;
-  greetPtr();  // calls greetEvening
+  greetPtr(); // calls greetEvening
   std::cout << std::endl;
 
   // using function pointer as a callback
-  executeGreeting(greetMorning);  // calls greetMorning
-  executeGreeting(greetEvening);  // calls greetEvening
+  executeGreeting(greetMorning); // calls greetMorning
+  executeGreeting(greetEvening); // calls greetEvening
   std::cout << std::endl;
 
   // atexit example
   void (*byePtr)() = sayBye;
-  std::atexit(byePtr);  // register byePtr to be called at exit
+  std::atexit(byePtr); // register byePtr to be called at exit
   std::cout << "Program is running..." << std::endl;
   std::cout << "Program is ending..." << std::endl;
 
