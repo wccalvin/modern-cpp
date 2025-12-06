@@ -21,16 +21,16 @@ int main() {
    * does not require explicit indexing
    */
   int arr[] = {10, 20, 30, 40, 50};
-  for (const auto& num : arr) {
+  for (const auto &num : arr) {
     std::cout << "Array element: " << num << std::endl;
   }
 
   // to change the value in range-based for loop, use non-const reference
-  for (auto& num : arr) {
-    num *= 10;  // modify each element by multiplying by 10
+  for (auto &num : arr) {
+    num *= 10; // modify each element by multiplying by 10
   }
   std::cout << "Modified array elements:" << std::endl;
-  for (const auto& num : arr) {
+  for (const auto &num : arr) {
     std::cout << "Array element: " << num << std::endl;
   }
 
@@ -44,10 +44,10 @@ int main() {
   std::cout << "Using begin() and end() explicitly:" << std::endl;
   for (auto it = std::begin(arr); it != std::end(arr); ++it) {
     std::cout << "Array element pointer: " << it << std::endl;
-    *it /= 10;  // revert each element back by dividing by 10 and assigning it
-                // to pointer
+    *it /= 10; // revert each element back by dividing by 10 and assigning it
+               // to pointer
     std::cout << "Array element: " << *it
-              << std::endl;  // dereference pointer to get value
+              << std::endl; // dereference pointer to get value
   }
 
   return 0;

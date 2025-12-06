@@ -10,11 +10,11 @@
  */
 int main() {
   // declaring a pointer
-  int* ptr{nullptr};  // pointer to an integer
+  int *ptr{nullptr}; // pointer to an integer
 
   // declaring and initializing a pointer to the address of a variable
   int value = 42;
-  int* valuePtr = &value;  // valuePtr holds the address of value
+  int *valuePtr = &value; // valuePtr holds the address of value
 
   std::cout << "Value: " << value << std::endl;
   std::cout << "Address of value: " << &value << std::endl;
@@ -27,12 +27,12 @@ int main() {
   double dvalue = 3.14;
   // ptr = &dvalue;  // compilation error: cannot convert from 'double*' -
   // use void* to solve this issue
-  void* voidPtr = &dvalue;  // void pointer can hold any type address
+  void *voidPtr = &dvalue; // void pointer can hold any type address
 
   // modifying value through pointer dereferencing
   *valuePtr = 100;
   std::cout << "Modified Value: " << value
-            << std::endl;  // note the value of value has changed as well
+            << std::endl; // note the value of value has changed as well
   std::cout << std::endl;
 
   // can't read or write through null pointer
@@ -45,8 +45,8 @@ int main() {
   // std::cout << "nullPtr: " << *nullPtr << std::endl; // EXC_BAD_ACCESS error
 
   // sematic error of uninitialized pointer with math operations
-  int* uninitPtr;  // uninitialized pointer (wild pointer)
-  std::cout << uninitPtr + 2 << std::endl;  // sematic error: undefined behavior
+  int *uninitPtr; // uninitialized pointer (wild pointer)
+  std::cout << uninitPtr + 2 << std::endl; // sematic error: undefined behavior
 
   return 0;
 }

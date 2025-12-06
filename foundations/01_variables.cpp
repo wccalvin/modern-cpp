@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-  int i;  // contains junk value without initializing
+  int i; // contains junk value without initializing
   std::cout << i << std::endl;
 
   int j = 0;

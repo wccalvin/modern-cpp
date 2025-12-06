@@ -10,19 +10,19 @@ void swapByValue(int a, int b) {
 }
 
 // swap by address (using pointers) - for reference
-void swapByAddress(int* a, int* b) {
+void swapByAddress(int *a, int *b) {
   // when using pointers, we have to check for null pointers in real code
   int temp = *a;
-  *a = *b;  // dereferencing pointer b to get value and assign it to another
-            // pointer a
+  *a = *b; // dereferencing pointer b to get value and assign it to another
+           // pointer a
   *b = temp;
 }
 
 // swap by reference using C++ references - for reference
-void swapByReference(int& a, int& b) {
+void swapByReference(int &a, int &b) {
   // this syntax is cleaner; no null pointer checks needed
   int temp = a;
-  a = b;  // no dereferencing needed
+  a = b; // no dereferencing needed
   b = temp;
 }
 

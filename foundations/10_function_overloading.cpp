@@ -18,7 +18,7 @@ int add(int a, int b) { return a + b; }
 // overloaded function to add two doubles
 double add(double a, double b) { return a + b; }
 // overloaded function to concatenate two strings
-std::string add(const std::string& a, const std::string& b) { return a + b; }
+std::string add(const std::string &a, const std::string &b) { return a + b; }
 // overloaded function to add three integers
 int add(int a, int b, int c) { return a + b + c; }
 // example of extern "C" to prevent name mangling
@@ -27,13 +27,13 @@ extern "C" int c_add(int a, int b) { return a + b; }
 int main() {
   // calling overloaded functions
   std::cout << "Add integers: " << add(2, 3)
-            << std::endl;  // calls int add(int, int)
+            << std::endl; // calls int add(int, int)
   std::cout << "Add doubles: " << add(2.5, 3.5)
-            << std::endl;  // calls double add(double, double)
+            << std::endl; // calls double add(double, double)
   std::cout << "Add strings: "
             << add(std::string("Hello, "), std::string("World!")) << std::endl;
   std::cout << "Add three integers: " << add(1, 2, 3)
-            << std::endl;  // calls int add(int, int, int)
+            << std::endl; // calls int add(int, int, int)
 
   return 0;
 }

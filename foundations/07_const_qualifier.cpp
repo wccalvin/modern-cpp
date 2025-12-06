@@ -12,11 +12,11 @@
  * compilation error otherwise)
  */
 
-const float PI = 3.14159f;  // constant variable for pi
+const float PI = 3.14159f; // constant variable for pi
 float areaOfCircle(const float radius) { return PI * radius * radius; }
 float circumferenceOfCircle(const float radius) { return 2 * PI * radius; }
 // const with references
-void printValue(const int& value) {
+void printValue(const int &value) {
   // value = value + 1; // Compilation error: cannot modify a const reference
   std::cout << "Value: " << value << std::endl;
 }
@@ -33,12 +33,12 @@ int main() {
   std::cout << "Value of const variable a: " << a << std::endl;
   // int* aPtr = a; // Compilation error: cannot convert from 'const int*' to
   // 'int*'
-  const int* constAPtr = &a;  // pointer to a const int
+  const int *constAPtr = &a; // pointer to a const int
   std::cout << "Value pointed to by constAPtr: " << *constAPtr << std::endl;
   // try another way using reference
   // int aRef = &a;  // Compilation error: cannot bind non-const lvalue
   // reference to a const int
-  const int& constARef = a;  // reference to a const int
+  const int &constARef = a; // reference to a const int
   std::cout << "Value referred to by constARef: " << constARef << std::endl;
   printValue(a);
 
