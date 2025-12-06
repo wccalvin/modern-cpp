@@ -31,6 +31,34 @@ int main() {
   }
   std::cout << std::endl;
 
+  // simple representation of 2D array using single allocation
+  int* p1 = new int[3];
+  int* p2 = new int[3];
+  int** twoDArray = new int*[2];
+  twoDArray[0] = p1;
+  twoDArray[1] = p2;
+  // assign values
+  for (size_t i = 0; i < 2; ++i) {
+    for (size_t j = 0; j < 3; ++j) {
+      twoDArray[i][j] = (i + 1) * (j + 1) * 5;
+    }
+  }
+  // print values
+  std::cout << "Simple Representation of 2D Array:" << std::endl;
+  for (size_t i = 0; i < 2; ++i) {
+    for (size_t j = 0; j < 3; ++j) {
+      std::cout << twoDArray[i][j] << " ";
+    }
+    std::cout << std::endl;
+  }
+  std::cout << std::endl;
+
+  // deallocate memory
+  delete[] p1;
+  delete[] p2;
+  delete[] twoDArray;
+  twoDArray = nullptr;  // set pointer to nullptr after deletion
+
   // representation of the same 2D array using dynamic memory allocation
   int** heapArray = new int*[rows];  // allocate array of pointers for rows
   for (size_t i = 0; i < rows; ++i) {
@@ -79,7 +107,6 @@ int main() {
     }
     std::cout << std::endl;
   }
-  std::cout << std::endl;
   // deallocate memory
   for (size_t i = 0; i < 2; ++i) {
     delete[] initArray[i];  // free each row
@@ -87,30 +114,5 @@ int main() {
   delete[] initArray;   // free array of pointers for rows
   initArray = nullptr;  // set pointer to nullptr after deletion
 
-  // simple representation of 2D array using single allocation
-  int* p1 = new int[3];
-  int* p2 = new int[3];
-  int** twoDArray = new int*[2];
-  twoDArray[0] = p1;
-  twoDArray[1] = p2;
-  // assign values
-  for (size_t i = 0; i < 2; ++i) {
-    for (size_t j = 0; j < 3; ++j) {
-      twoDArray[i][j] = (i + 1) * (j + 1) * 5;
-    }
-  }
-  // print values
-  std::cout << "Simple Representation of 2D Array:" << std::endl;
-  for (size_t i = 0; i < 2; ++i) {
-    for (size_t j = 0; j < 3; ++j) {
-      std::cout << twoDArray[i][j] << " ";
-    }
-    std::cout << std::endl;
-  }
-  // deallocate memory
-  delete[] p1;
-  delete[] p2;
-  delete[] twoDArray;
-  twoDArray = nullptr;  // set pointer to nullptr after deletion
   return 0;
 }
